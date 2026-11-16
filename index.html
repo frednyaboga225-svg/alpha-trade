@@ -1,101 +1,120 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alpha Trade | Forex Platform</title>
+<title>Alpha Trade | Trade Smarter</title>
+<meta name="description" content="Alpha Trade Forex trading technology platform.">
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#0b1020;color:#f1f5f9;font-family:Arial,sans-serif}
-header{padding:18px 20px;background:#111a2e;border-bottom:1px solid #26334c;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:bold;color:#d9b45b}
-.logo span{color:white}
-.demo{background:#173b35;color:#69e0ad;padding:7px 12px;border-radius:20px;font-size:12px}
-main{max-width:1000px;margin:auto;padding:20px}
-h2{font-size:19px;margin-top:25px}
-.muted{color:#94a3b8;font-size:13px}
-.balance{background:linear-gradient(120deg,#17243b,#243b56);padding:22px;border-radius:14px;margin-top:18px}
-.balance strong{display:block;font-size:32px;margin:10px 0}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.panel{background:#121c30;border:1px solid #26334c;border-radius:12px;padding:16px}
-.pair{display:flex;justify-content:space-between;align-items:center}
-.price{font-size:20px;font-weight:bold;margin-top:12px}
-.green{color:#43d69b}
-.red{color:#ff7373}
-input,select{width:100%;padding:13px;background:#0b1324;border:1px solid #34445e;border-radius:8px;color:white;margin:8px 0 15px}
-button{padding:13px;border:0;border-radius:8px;font-weight:bold;cursor:pointer}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.buy{background:#16a875;color:white}
-.sell{background:#d84d60;color:white}
-table{width:100%;border-collapse:collapse;font-size:13px}
-td,th{padding:12px 7px;text-align:left;border-bottom:1px solid #26334c}
-.notice{background:#302719;color:#f6d58c;padding:13px;border-radius:9px;font-size:12px;line-height:1.5;margin-top:18px}
-footer{text-align:center;color:#718096;font-size:12px;padding:25px}
-@media(max-width:520px){.grid{grid-template-columns:1fr}main{padding:14px}.balance strong{font-size:28px}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#090b10;color:#fff;font-family:Arial,sans-serif}
+header{height:75px;padding:0 7%;display:flex;align-items:center;
+justify-content:space-between;border-bottom:1px solid #24242a}
+.logo{font-size:23px;font-weight:bold;color:#d6ad55}
+nav a{color:#ddd;text-decoration:none;margin-left:22px;font-size:14px}
+nav a:hover{color:#d6ad55}
+.hero{padding:95px 8%;min-height:480px;
+background:radial-gradient(ellipse at 80% 30%,#302515,#090b10 65%)}
+.tag{color:#d6ad55;letter-spacing:3px;font-size:12px}
+h1{font-size:clamp(40px,7vw,72px);margin:25px 0;line-height:1.08}
+.gold{color:#d6ad55}
+.hero p{color:#aaa;max-width:520px;line-height:1.8}
+.actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:15px 25px;border-radius:5px;text-decoration:none;
+font-weight:bold;display:inline-block}
+.primary{background:#d6ad55;color:#111}
+.secondary{border:1px solid #d6ad55;color:#d6ad55}
+section{padding:65px 8%}
+h2{font-size:30px;margin-bottom:15px}
+.subtitle{color:#999;margin-bottom:30px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.card{background:#14171e;border:1px solid #292d35;
+padding:25px;border-radius:10px}
+.card h3{color:#d6ad55;margin-bottom:12px}
+.card p{color:#aaa;line-height:1.6;font-size:14px}
+.market{display:flex;justify-content:space-between;
+padding:17px 0;border-bottom:1px solid #292d35}
+.market span:last-child{color:#d6ad55}
+.cta{text-align:center;background:#17140f}
+footer{text-align:center;padding:30px;color:#888;
+border-top:1px solid #292d35;font-size:13px}
+@media(max-width:600px){
+header{padding:0 5%}
+nav a{margin-left:10px;font-size:12px}
+.hero{padding:75px 6%}
+section{padding:50px 6%}
+}
 </style>
 </head>
 <body>
+
 <header>
-  <div class="logo">ALPHA <span>TRADE</span></div>
-  <div class="demo">DEMO ACCOUNT</div>
+<div class="logo">◆ ALPHA TRADE</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#markets">Markets</a>
+<a href="#about">About</a>
+</nav>
 </header>
+
 <main>
-  <p class="muted">Welcome to your trading dashboard</p>
-  <section class="balance">
-    <div class="muted">Virtual account balance</div>
-    <strong id="balance">$10,000.00</strong>
-    <span class="green">Practice mode · No real money</span>
-  </section>
-  <h2>Market watch</h2>
-  <div class="grid">
-    <div class="panel"><div class="pair"><b>EUR/USD</b><span class="green">● Demo</span></div><div class="price" id="eur">1.08500</div><div class="muted">Euro / US Dollar</div></div>
-    <div class="panel"><div class="pair"><b>GBP/USD</b><span class="green">● Demo</span></div><div class="price" id="gbp">1.27000</div><div class="muted">British Pound / US Dollar</div></div>
-    <div class="panel"><div class="pair"><b>USD/JPY</b><span class="green">● Demo</span></div><div class="price" id="jpy">150.000</div><div class="muted">US Dollar / Japanese Yen</div></div>
-    <div class="panel"><div class="pair"><b>USD/CHF</b><span class="green">● Demo</span></div><div class="price" id="chf">0.88000</div><div class="muted">US Dollar / Swiss Franc</div></div>
-  </div>
-  <h2>Practice trade</h2>
-  <div class="panel">
-    <label class="muted" for="pair">Currency pair</label>
-    <select id="pair"><option>EUR/USD</option><option>GBP/USD</option><option>USD/JPY</option><option>USD/CHF</option></select>
-    <label class="muted" for="amount">Virtual trade amount (USD)</label>
-    <input id="amount" type="number" min="1" max="10000" value="100">
-    <div class="actions"><button class="buy" onclick="trade('BUY')">BUY</button><button class="sell" onclick="trade('SELL')">SELL</button></div>
-    <p class="muted" id="message">Choose a pair and place a demo practice order.</p>
-  </div>
-  <h2>Practice trade history</h2>
-  <div class="panel">
-    <table><thead><tr><th>Pair</th><th>Side</th><th>Amount</th><th>Status</th></tr></thead><tbody id="history"><tr><td colspan="4" class="muted">No practice trades yet.</td></tr></tbody></table>
-  </div>
-  <div class="notice">IMPORTANT: This is an educational demo only. Prices are randomly simulated, not live market prices. Orders do not reach a broker and cannot make real profits or losses. Do not deposit money.</div>
+<div class="hero" id="home">
+<div class="tag">THE FUTURE OF TRADING</div>
+<h1>TRADE SMARTER.<br>
+<span class="gold">GROW STRONGER.</span></h1>
+<p>
+Discover a modern Forex trading technology platform
+built to help traders access market information,
+develop their skills and make informed decisions.
+</p>
+<div class="actions">
+<a class="btn primary" href="#markets">Explore Markets</a>
+<a class="btn secondary" href="#about">Learn More</a>
+</div>
+</div>
+
+<section id="markets">
+<h2>Market Watch</h2>
+<p class="subtitle">Explore popular Forex markets.</p>
+<div class="cards">
+<div class="card"><h3>EUR / USD</h3><p>Euro vs US Dollar</p></div>
+<div class="card"><h3>GBP / USD</h3><p>British Pound vs US Dollar</p></div>
+<div class="card"><h3>USD / JPY</h3><p>US Dollar vs Japanese Yen</p></div>
+<div class="card"><h3>XAU / USD</h3><p>Gold vs US Dollar</p></div>
+</div>
+</section>
+
+<section id="about">
+<h2>Why Alpha Trade?</h2>
+<p class="subtitle">Technology designed for a smarter trading experience.</p>
+<div class="cards">
+<div class="card">
+<h3>Modern Platform</h3>
+<p>A clean and professional trading interface.</p>
+</div>
+<div class="card">
+<h3>Market Education</h3>
+<p>Tools and resources to support learning.</p>
+</div>
+<div class="card">
+<h3>MT5 Ready</h3>
+<p>Designed for future integration with a licensed MT5 broker.</p>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<h2 class="gold">WELCOME TO ALPHA TRADE</h2>
+<p class="subtitle">Your trading journey starts here.</p>
+<a class="btn primary" href="#home">Explore Platform</a>
+</section>
 </main>
-<footer>ALPHA TRADE · Demo Version 1.0</footer>
-<script>
-let balance = 10000;
-const prices = {"EUR/USD":1.08500,"GBP/USD":1.27000,"USD/JPY":150.000,"USD/CHF":0.88000};
-function displayPrices(){
- const ids={"EUR/USD":"eur","GBP/USD":"gbp","USD/JPY":"jpy","USD/CHF":"chf"};
- Object.keys(prices).forEach(pair=>{
-   prices[pair] += (Math.random()-0.5) * (pair==="USD/JPY"?0.08:0.0008);
-   document.getElementById(ids[pair]).textContent=prices[pair].toFixed(pair==="USD/JPY"?3:5);
- });
-}
-setInterval(displayPrices,3000);
-function trade(side){
- const pair=document.getElementById("pair").value;
- const amount=Number(document.getElementById("amount").value);
- const message=document.getElementById("message");
- if(!Number.isFinite(amount)||amount<=0||amount>balance){message.textContent="Enter a valid amount within your demo balance.";return;}
- balance-=amount;
- document.getElementById("balance").textContent="$"+balance.toFixed(2);
- message.textContent=side+" practice order recorded for "+pair+". No real trade was placed.";
- const history=document.getElementById("history");
- if(history.textContent.includes("No practice trades")){history.innerHTML="";}
- const row=history.insertRow(0);
- row.insertCell(0).textContent=pair;
- row.insertCell(1).textContent=side;
- row.insertCell(2).textContent="$"+amount.toFixed(2);
- row.insertCell(3).textContent="Demo only";
-}
-</script>
+
+<footer>
+<p>© 2026 Alpha Trade. All rights reserved.</p>
+<p>Trading involves risk. This website is currently an informational platform, not a live trading service.</p>
+</footer>
+
 </body>
 </html>
